@@ -25,6 +25,8 @@ public class TicTacToe {
 			return "X is the winner.";
 		else if (getGameStatus()==2)
 			return "O is the winner.";
+		else if (getGameStatus()==0)
+			return "Game is still in progress.";
 		else
 			return "Drawn game.";
 	}
@@ -34,6 +36,7 @@ public class TicTacToe {
 		int winX=1;
 		int winO=2;
 		int drawnGame=3;
+		int gameInProgress=0;
 
 		for (int i=0;i<3;i++)
 			if ((board[i][0]==1 && board[i][1]==1 && board[i][2]==1)||(board[0][i]==1 && board[1][i]==1 && board[2][i]==1))
@@ -47,6 +50,11 @@ public class TicTacToe {
 		else
 			if ((board[0][0]==-1 && board[1][1]==-1 && board[2][2]==-1)||(board[0][2]==-1 && board[1][1]==-1 && board[2][0]==-1))
 				return winO;
+
+		for (int j=0;j<3;j++)
+			for (int k=0;k<3;k++)
+				if (isEmptyPosition(j,k))
+					return gameInProgress;
 
 		return drawnGame;
 	}
