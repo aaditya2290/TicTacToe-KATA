@@ -19,6 +19,32 @@ public class TicTacToe {
 		return arrayToString(board);
 	}
 
+	public String returnGameStatus()
+	{
+		if (getGameStatus()==1)
+			return "X is the winner.";
+		else if (getGameStatus()==2)
+			return "O is the winner.";
+		else
+			return "Drawn game.";
+	}
+
+	public int getGameStatus()
+	{
+		int winX=1;
+		int winO=2;
+		int drawnGame=3;
+
+		for (int i=0;i<3;i++)
+			if ((board[i][0]==1 && board[i][1]==1 && board[i][2]==1))
+				return winX;
+			else
+				if ((board[i][0]==-1 && board[i][1]==-1 && board[i][2]==-1)) 
+					return winO;
+
+		return drawnGame;
+	}
+
 	public boolean isEmptyPosition(int i,int j)
 	{
 		if (board[i][j]==0)
@@ -45,5 +71,7 @@ public class TicTacToe {
 		return returnString;
 
 	}
+
+
 
 }

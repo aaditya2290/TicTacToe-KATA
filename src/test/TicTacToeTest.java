@@ -36,4 +36,15 @@ public class TicTacToeTest {
 		assertEquals("Position is already occupied.",ticTacToe.move(0, 1));
 	}
 
+	@Test
+	public void testReturnGameStatusWinRow()
+	{
+		assertEquals("{{X,-,-},{-,-,-},{-,-,-}}",ticTacToe.move(0, 0));
+		assertEquals("{{X,-,-},{O,-,-},{-,-,-}}",ticTacToe.move(1, 0));
+		assertEquals("{{X,X,-},{O,-,-},{-,-,-}}",ticTacToe.move(0, 1));
+		assertEquals("{{X,X,-},{O,-,O},{-,-,-}}",ticTacToe.move(1, 2));
+		assertEquals("{{X,X,X},{O,-,O},{-,-,-}}",ticTacToe.move(0, 2));
+		assertEquals("X is the winner.",ticTacToe.returnGameStatus());
+	}
+
 }
