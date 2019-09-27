@@ -22,4 +22,11 @@ public class TicTacToeTest {
 		assertEquals("{{-,-,-},{-,-,-},{-,-,X}}",ticTacToe.move(2, 2));	
 	}
 
+	@Test
+	public void testXAndOPlayAlternately()
+	{
+		assertEquals("{{-,X,-},{-,-,-},{-,-,-}}",ticTacToe.move(0, 1));	
+		assertEquals("{{-,X,O},{-,-,-},{-,-,-}}",ticTacToe.move(0, 2));
+	}
+
 }

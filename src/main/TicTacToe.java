@@ -11,6 +11,7 @@ public class TicTacToe {
 
 	{
 		board[i][j]=currentValue;
+		currentValue=-currentValue;
 		return arrayToString(board);
 	}
 
