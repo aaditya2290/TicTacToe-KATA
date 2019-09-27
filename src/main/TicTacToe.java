@@ -10,9 +10,21 @@ public class TicTacToe {
 	public String move(int i,int j)
 
 	{
-		board[i][j]=currentValue;
+		if (isEmptyPosition(i,j))
+			board[i][j]=currentValue;
+		else
+			return "Position is already occupied.";
+
 		currentValue=-currentValue;
 		return arrayToString(board);
+	}
+
+	public boolean isEmptyPosition(int i,int j)
+	{
+		if (board[i][j]==0)
+			return true;
+		else
+			return false;
 	}
 
 	public String arrayToString(int[][] boardArray)

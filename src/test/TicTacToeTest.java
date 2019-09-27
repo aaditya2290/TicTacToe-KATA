@@ -29,4 +29,11 @@ public class TicTacToeTest {
 		assertEquals("{{-,X,O},{-,-,-},{-,-,-}}",ticTacToe.move(0, 2));
 	}
 
+	@Test
+	public void testDuplicateMove()
+	{
+		assertEquals("{{-,X,-},{-,-,-},{-,-,-}}",ticTacToe.move(0, 1));	
+		assertEquals("Position is already occupied.",ticTacToe.move(0, 1));
+	}
+
 }
