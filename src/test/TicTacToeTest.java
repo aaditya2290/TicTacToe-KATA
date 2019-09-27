@@ -90,4 +90,15 @@ public class TicTacToeTest {
 		assertEquals("Drawn game.",ticTacToe.returnGameStatus());
 	}
 
+	@Test
+	public void testIsGameFinishedBeforeMove()
+	{
+		assertEquals("{{-,-,-},{X,-,-},{-,-,-}}",ticTacToe.move(1, 0));
+		assertEquals("{{-,O,-},{X,-,-},{-,-,-}}",ticTacToe.move(0, 1));
+		assertEquals("{{-,O,-},{X,X,-},{-,-,-}}",ticTacToe.move(1, 1));
+		assertEquals("{{-,O,O},{X,X,-},{-,-,-}}",ticTacToe.move(0, 2));
+		assertEquals("{{-,O,O},{X,X,X},{-,-,-}}",ticTacToe.move(1, 2));	
+		assertEquals("Invalid move as game is already completed.",ticTacToe.move(0, 0));
+	}
+
 }

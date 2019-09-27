@@ -10,6 +10,9 @@ public class TicTacToe {
 	public String move(int i,int j)
 
 	{
+		if (isGameCompleted())
+			return "Invalid move as game is already completed.";
+
 		if (isEmptyPosition(i,j))
 			board[i][j]=currentValue;
 		else
@@ -17,6 +20,15 @@ public class TicTacToe {
 
 		currentValue=-currentValue;
 		return arrayToString(board);
+	}
+
+	public boolean isGameCompleted()
+	{
+		if  (getGameStatus()>0)
+			return true;
+		else
+			return false;
+
 	}
 
 	public String returnGameStatus()
